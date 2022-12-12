@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../resources/string_values.dart';
+
 class CustomPainter extends StatefulWidget {
   const CustomPainter({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class _CustomPainterState extends State<CustomPainter> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Custom Painter'),
+        title: const Text(StringValues.lblTileCustomPainter),
       ),
       body: Container(),
     );
