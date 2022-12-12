@@ -37,6 +37,7 @@ dependencies:
   sizer: ^2.0.15
   google_fonts: ^3.0.1
   carousel_slider: 4.1.1
+  screenshot: ^1.2.3
 
 dev_dependencies:
   flutter_test:
