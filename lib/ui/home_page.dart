@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
       case StringValues.lblTileCustomPainter:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const CustomPainterNew()),
+          MaterialPageRoute(builder: (context) => const FlutterPainterExample()),
         );
         break;
       case StringValues.lblTileImageSlider:
