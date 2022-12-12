@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_showcase_app/ui/image_slider.dart';
 
 import '../models/grid_services.dart';
+import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
 
 class HomePage extends StatefulWidget {
@@ -33,15 +35,35 @@ class _HomePageState extends State<HomePage> {
         child: CustomGridView(
           servicesList: gridServices,
           onItemTapped: (value) {
-            //performAction(value);
+            performAction(value);
           },
         ),
       ),
     );
   }
+  Future<void> performAction(String action) async {
+    switch (action) {
+      case StringValues.lblTileImageSlider:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ImageSlider()),
+        );
+        break;
+      // case StringValues.lbl_tile_cof:
+      //   pushNewScreenWithRouteSettings(
+      //     context,
+      //     settings: RouteSettings(name: RouteConfigs.cofPage),
+      //     screen: CertificateOfFitness(
+      //         isInclusion: CommonUtils.checkServiceIncluded(context, action)),
+      //     pageTransitionAnimation: PageTransitionAnimation.fade,
+      //   );
+      //   break;
+    }
+
+  }
   List<Services> fetchServices(){
     return <Services>[
-      Services('IMAGE SLIDER', '01'),
+      Services(StringValues.lblTileImageSlider, '01'),
       Services('CUSTOM PAINTER', '02'),
       Services('IMAGE PICKER', '03'),
       Services('ANIMATION', '04'),
