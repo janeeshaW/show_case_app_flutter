@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../resources/string_values.dart';
 
-class CustomPainter extends StatefulWidget {
-  const CustomPainter({Key? key}) : super(key: key);
+class CustomPainterNew extends StatefulWidget {
+  const CustomPainterNew({Key? key}) : super(key: key);
 
   @override
-  State<CustomPainter> createState() => _CustomPainterState();
+  State<CustomPainterNew> createState() => _CustomPainterNewState();
 }
 
-class _CustomPainterState extends State<CustomPainter> {
+class _CustomPainterNewState extends State<CustomPainterNew> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

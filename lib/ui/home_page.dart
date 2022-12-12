@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
-
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
@@ -43,28 +43,26 @@ class _HomePageState extends State<HomePage> {
   }
   Future<void> performAction(String action) async {
     switch (action) {
+      case StringValues.lblTileCustomPainter:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CustomPainterNew()),
+        );
+        break;
       case StringValues.lblTileImageSlider:
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const ImageSlider()),
         );
         break;
-      // case StringValues.lbl_tile_cof:
-      //   pushNewScreenWithRouteSettings(
-      //     context,
-      //     settings: RouteSettings(name: RouteConfigs.cofPage),
-      //     screen: CertificateOfFitness(
-      //         isInclusion: CommonUtils.checkServiceIncluded(context, action)),
-      //     pageTransitionAnimation: PageTransitionAnimation.fade,
-      //   );
-      //   break;
+
     }
 
   }
   List<Services> fetchServices(){
     return <Services>[
       Services(StringValues.lblTileImageSlider, '01'),
-      Services('CUSTOM PAINTER', '02'),
+      Services(StringValues.lblTileCustomPainter, '02'),
       Services('IMAGE PICKER', '03'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
