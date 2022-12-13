@@ -4,6 +4,7 @@ import 'package:flutter_showcase_app/ui/image_slider.dart';
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
+import 'animated_drawer/drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -55,7 +56,12 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const ImageSlider()),
         );
         break;
-
+      case StringValues.lblTileDrawer:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const DrawerMain()),
+        );
+        break;
     }
 
   }
@@ -63,7 +69,7 @@ class _HomePageState extends State<HomePage> {
     return <Services>[
       Services(StringValues.lblTileImageSlider, '01'),
       Services(StringValues.lblTileCustomPainter, '02'),
-      Services('IMAGE PICKER', '03'),
+      Services(StringValues.lblTileDrawer, '03'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
       Services('IMAGE SLIDER', '01'),

@@ -8,9 +8,9 @@ import '../resources/string_values.dart';
 import '../resources/styles.dart';
 
 class CustomGridView extends StatelessWidget {
-  List<Services>? servicesList;
+  final List<Services>? servicesList;
   final Function(String) onItemTapped;
-  CustomGridView({Key? key, this.servicesList, required this.onItemTapped}) : super(key: key);
+  const CustomGridView({Key? key, this.servicesList, required this.onItemTapped}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,6 +87,9 @@ class CustomGridView extends StatelessWidget {
         url = ImagesRepo.windScreen;
         break;
       case StringValues.lblTileBiometric:
+        url = ImagesRepo.windScreen;
+        break;
+      case StringValues.lblTileDrawer:
         url = ImagesRepo.windScreen;
         break;
       // case StringValues.lbl_tile_infringements:

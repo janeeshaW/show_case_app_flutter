@@ -39,6 +39,7 @@ dependencies:
   carousel_slider: 4.1.1
   screenshot: ^1.2.3
   flutter_painter: ^1.0.1
+  flutter_zoom_drawer: 2.1.1
   phosphor_flutter:
 
 dev_dependencies:
