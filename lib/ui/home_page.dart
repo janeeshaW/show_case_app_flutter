@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
+import 'package:flutter_showcase_app/ui/login/login_screen.dart';
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
@@ -62,6 +63,12 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const DrawerMain()),
         );
         break;
+      case StringValues.lblAnimations:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => LoginScreen()),
+        );
+        break;
     }
 
   }
@@ -70,7 +77,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblTileImageSlider, '01'),
       Services(StringValues.lblTileCustomPainter, '02'),
       Services(StringValues.lblTileDrawer, '03'),
-      Services('ANIMATION', '04'),
+      Services(StringValues.lblAnimations, '04'),
       Services('BIOMETRICS', '05'),
       Services('IMAGE SLIDER', '01'),
       Services('CUSTOM PAINTER', '02'),
