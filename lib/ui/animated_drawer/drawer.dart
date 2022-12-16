@@ -22,7 +22,7 @@ class DrawerMain extends StatefulWidget {
 
 class _DrawerMainState extends State<DrawerMain> {
 
-  MenuItem currentMenu = MenuItems.dashboard;
+  CustomMenuItem currentMenu = MenuItems.dashboard;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _DrawerMainState extends State<DrawerMain> {
         menuScreen:  Builder(
           builder: (context) {
             return DrawerMenu(
-              onSelectedItem: (MenuItem item) {
+              onSelectedItem: (CustomMenuItem item) {
                 setState(() {
                   currentMenu = item;
                   ZoomDrawer.of(context)!.close();

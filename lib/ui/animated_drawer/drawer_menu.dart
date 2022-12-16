@@ -7,8 +7,8 @@ import '../../resources/Images_repo.dart';
 import '../home_page.dart';
 
 class DrawerMenu extends StatefulWidget {
-  final MenuItem currentMenu;
-  final ValueChanged<MenuItem> onSelectedItem;
+  final CustomMenuItem currentMenu;
+  final ValueChanged<CustomMenuItem> onSelectedItem;
   const DrawerMenu({Key? key,required this.currentMenu, required this.onSelectedItem}) : super(key: key);
 
   @override
@@ -54,7 +54,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
     );
   }
 
-  Widget buildMenuItems(MenuItem item) =>  ListTileTheme(
+  Widget buildMenuItems(CustomMenuItem item) =>  ListTileTheme(
     selectedColor: Colors.white,
     child: ListTile(
       minLeadingWidth: 2.h,
