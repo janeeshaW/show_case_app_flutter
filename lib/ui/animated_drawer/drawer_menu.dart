@@ -3,6 +3,8 @@ import 'package:flutter_showcase_app/models/menu_item.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../models/final_menu_items.dart';
+import '../../resources/Images_repo.dart';
+import '../home_page.dart';
 
 class DrawerMenu extends StatefulWidget {
   final MenuItem currentMenu;
@@ -24,9 +26,28 @@ class _DrawerMenuState extends State<DrawerMenu> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Spacer(),
+            Padding(
+              padding: EdgeInsets.only(left: 4.h,top: 2.h),
+              child: Column(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: Image(
+                      width: 10.h,
+                      height: 10.h,
+                      image: const AssetImage(ImagesRepo.proPic),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 1.h,bottom: 5.h),
+                    child: const Text("SARAH JAMES"),
+                  ),
+                ],
+              ),
+            ),
             ...MenuItems.all.map(buildMenuItems).toList(),
             const Spacer(),
+
           ],
         ),),
       ),
@@ -39,7 +60,16 @@ class _DrawerMenuState extends State<DrawerMenu> {
       minLeadingWidth: 2.h,
       leading: Icon(item.icon),
       title: Text(item.name),
-      onTap: ()=> widget.onSelectedItem(item),
+      onTap: (){
+        if(item.name == "Log Out"){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        } else {
+          widget.onSelectedItem(item);
+        }
+      },
       selected: widget.currentMenu == item,
       selectedTileColor: Colors.black26,
     ),

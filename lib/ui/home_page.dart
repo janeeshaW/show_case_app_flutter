@@ -5,6 +5,7 @@ import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
 import 'animated_drawer/drawer.dart';
+import 'bottom_navigator/select_bottom_navigator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -62,6 +63,16 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const DrawerMain()),
         );
         break;
+      case StringValues.lblBottomNavigation:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const BottomNavigatorSelector()),
+        );
+        break;
+
+
+
+
     }
 
   }
@@ -72,7 +83,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblTileDrawer, '03'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
-      Services('IMAGE SLIDER', '01'),
+      Services(StringValues.lblBottomNavigation, '06'),
       Services('CUSTOM PAINTER', '02'),
       Services('IMAGE PICKER', '03'),
       Services('ANIMATION', '04'),

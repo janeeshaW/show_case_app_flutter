@@ -92,6 +92,18 @@ class CustomGridView extends StatelessWidget {
       case StringValues.lblTileDrawer:
         url = ImagesRepo.windScreen;
         break;
+      case StringValues.lblBottomNavigation:
+        url = ImagesRepo.windScreen;
+        break;
+      case StringValues.lblAnimatedBottomNavigation:
+        url = ImagesRepo.windScreen;
+        break;
+      case StringValues.lblScrollBottomNavigation:
+        url = ImagesRepo.windScreen;
+        break;
+      case StringValues.lblFancyBottomNavigation:
+        url = ImagesRepo.windScreen;
+        break;
       // case StringValues.lbl_tile_infringements:
       //   url = ImagesRepo.infringements;
       //   break;
