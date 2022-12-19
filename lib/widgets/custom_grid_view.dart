@@ -104,6 +104,9 @@ class CustomGridView extends StatelessWidget {
       case StringValues.lblFancyBottomNavigation:
         url = ImagesRepo.windScreen;
         break;
+      case StringValues.lblVoiceIntegration:
+        url = ImagesRepo.windScreen;
+        break;
       // case StringValues.lbl_tile_infringements:
       //   url = ImagesRepo.infringements;
       //   break;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
+import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart';
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
@@ -69,6 +70,12 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const BottomNavigatorSelector()),
         );
         break;
+      case StringValues.lblVoiceIntegration:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const SpeechToTextHome()),
+        );
+        break;
 
 
 
@@ -84,7 +91,7 @@ class _HomePageState extends State<HomePage> {
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
       Services(StringValues.lblBottomNavigation, '06'),
-      Services('CUSTOM PAINTER', '02'),
+      Services(StringValues.lblVoiceIntegration, '07'),
       Services('IMAGE PICKER', '03'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
