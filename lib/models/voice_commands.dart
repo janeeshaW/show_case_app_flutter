@@ -17,6 +17,12 @@ class Utils {
     if (text.contains(Commands.email)){
       final body = _getTextAfterCommand(text, Commands.email);
       openEmail(body: body);
+    } else if (text.contains(Commands.browser1)){
+      final url = _getTextAfterCommand(text, Commands.browser1);
+      openLink(url);
+    } else if (text.contains(Commands.browser2)){
+      final url = _getTextAfterCommand(text, Commands.browser2);
+      openLink(url);
     }
 
   }
@@ -39,6 +45,14 @@ class Utils {
   static Future _launchUrl (String url) async {
     if(await canLaunch(url)){
       await launch(url);
+    }
+  }
+
+  static Future openLink (String url) async {
+    if(url.trim().isEmpty){
+      await _launchUrl("https://google.com");
+    } else {
+      await _launchUrl("https://$url");
     }
   }
 
