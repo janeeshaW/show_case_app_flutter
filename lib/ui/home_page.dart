@@ -7,6 +7,7 @@ import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
 import 'animated_drawer/drawer.dart';
 import 'bottom_navigator/select_bottom_navigator.dart';
+import 'onbording/on_bording_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -76,6 +77,13 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const SpeechToTextHome()),
         );
         break;
+      case StringValues.lblOnBoarding:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const OnBoardingHome()),
+        );
+        break;
+
 
 
 
@@ -92,7 +100,7 @@ class _HomePageState extends State<HomePage> {
       Services('BIOMETRICS', '05'),
       Services(StringValues.lblBottomNavigation, '06'),
       Services(StringValues.lblVoiceIntegration, '07'),
-      Services('IMAGE PICKER', '03'),
+      Services(StringValues.lblOnBoarding, '08'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
 

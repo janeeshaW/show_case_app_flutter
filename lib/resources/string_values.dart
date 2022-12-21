@@ -14,4 +14,5 @@ class StringValues {
   static const lblScrollBottomNavigation = "SCROLL BOTTOM NAVIGATION";
   static const lblFancyBottomNavigation = "FANCY BOTTOM NAVIGATION";
   static const lblVoiceIntegration = "VOICE INTEGRATION";
+  static const lblOnBoarding = "ON BOARDING";
 }
