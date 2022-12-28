@@ -7,6 +7,7 @@ import '../../resources/app_colors.dart';
 import '../../resources/styles.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:clipboard/clipboard.dart';
+import 'package:substring_highlight/substring_highlight.dart';
 
 class SpeechToTextHome extends StatefulWidget {
   const SpeechToTextHome({Key? key}) : super(key: key);
@@ -44,9 +45,12 @@ class _SpeechToTextHomeState extends State<SpeechToTextHome> {
           child: Center(child:
           Padding(
             padding: EdgeInsets.only(left: 2.h,right: 2.h,top: 5.h,bottom: 150),
-            child: Text(text,
+            child: SubstringHighlight(text:text,
               textAlign: TextAlign.center,
-              style: Styles.normalTextStyle(20.sp, AppColors.primaryColor),),
+              textStyle: Styles.normalTextStyle(20.sp, AppColors.primaryColor),
+              term: getTerm(text),
+              textStyleHighlight: const TextStyle(fontSize: 32, color: Colors.red,fontWeight: FontWeight.w600),
+            ),
           ))),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: AvatarGlow(
@@ -74,4 +78,16 @@ class _SpeechToTextHomeState extends State<SpeechToTextHome> {
 
         }
       });
+
+  String? getTerm (String text){
+    if(text.contains(Commands.email)){
+      return Commands.email;
+    } else if (text.contains(Commands.browser1)){
+      return Commands.browser1;
+    } else if (text.contains(Commands.browser2)){
+      return Commands.browser2;
+    } else {
+      return "";
+    }
+  }
 }
