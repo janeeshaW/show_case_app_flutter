@@ -5,6 +5,7 @@ import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart'
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
+import '3d_modeling/threed_modeling_home.dart';
 import 'animated_drawer/drawer.dart';
 import 'bottom_navigator/select_bottom_navigator.dart';
 import 'onbording/on_bording_home.dart';
@@ -83,6 +84,13 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const OnBoardingHome()),
         );
         break;
+      case StringValues.lbl3dModeling:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ThreeDModelingHome()),
+        );
+        break;
+
 
 
 
@@ -101,7 +109,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblBottomNavigation, '06'),
       Services(StringValues.lblVoiceIntegration, '07'),
       Services(StringValues.lblOnBoarding, '08'),
-      Services('ANIMATION', '04'),
+      Services(StringValues.lbl3dModeling, '09'),
       Services('BIOMETRICS', '05'),
 
     ];
