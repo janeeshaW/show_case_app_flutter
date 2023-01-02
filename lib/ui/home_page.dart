@@ -7,6 +7,7 @@ import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
 import '3d_modeling/threed_modeling_home.dart';
 import 'animated_drawer/drawer.dart';
+import 'ar_view/ar_view_home.dart';
 import 'bottom_navigator/select_bottom_navigator.dart';
 import 'onbording/on_bording_home.dart';
 
@@ -90,6 +91,13 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const ThreeDModelingHome()),
         );
         break;
+      case StringValues.lblArView:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ArViewHome()),
+        );
+        break;
+
 
 
 
@@ -110,7 +118,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblVoiceIntegration, '07'),
       Services(StringValues.lblOnBoarding, '08'),
       Services(StringValues.lbl3dModeling, '09'),
-      Services('BIOMETRICS', '05'),
+      Services(StringValues.lblArView, '10'),
 
     ];
 
