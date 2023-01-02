@@ -8,6 +8,7 @@ class StringValues {
   static const lblTileAnimation = "ANIMATION";
   static const lblTileBiometric = "BIOMETRICS";
   static const lblTileDrawer = "ANIMATED DRAWER";
+  static const lblAnimations = "ANIMATIONS";
   static const titleHistoryPage = "History Page";
   static const lblBottomNavigation = "BOTTOM NAVIGATION";
   static const lblAnimatedBottomNavigation = "ANIMATED BOTTOM NAVIGATION";
