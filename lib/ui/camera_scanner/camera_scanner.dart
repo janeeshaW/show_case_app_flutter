@@ -31,12 +31,13 @@ class _CameraScannerState extends State<CameraScanner> {
   }
 
   void _recognizeTexts() async {
+    printText = "";
     // Creating an InputImage object using the image path
-    final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     _imagePath = image!.path;
-    final inputImage = InputImage.fromFilePath(_imagePath);
+    InputImage inputImage = InputImage.fromFilePath(_imagePath);
     // Retrieving the RecognisedText from the InputImage
-    final text = await _textDetector.processImage(inputImage);
+    RecognisedText text = await _textDetector.processImage(inputImage);
     // Finding text String(s)
     for (TextBlock block in text.blocks) {
       for (TextLine line in block.lines) {
@@ -64,30 +65,33 @@ class _CameraScannerState extends State<CameraScanner> {
       body: Column(
         children: [
           Center(
-              child: Container(
-            margin: EdgeInsets.only(bottom: 4.h, top: 15.h),
-            child: Text(
-              printText,
-              textAlign: TextAlign.center,
-              style: Styles.normalTextStyle(18.sp, Colors.black),
-            ),
-          )),
+              child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: Container(
+                    color: Colors.black45,
+                    height: 350,
+                    margin: EdgeInsets.only(bottom: 4.h, top: 15.h),
+                    child: Text(
+                      printText,
+                      textAlign: TextAlign.center,
+                      style: Styles.normalTextStyle(18.sp, Colors.white),
+                    ),))),
           Center(
               child: Container(
-                margin: EdgeInsets.only(bottom: 4.h, top: 15.h),
-                child: TextButton(
-                    autofocus: false,
-                    onPressed: () {
-                      _recognizeTexts();
-                    },
-                    child: Text(
-                      StringValues.lblScanImage,
-                      style: GoogleFonts.montserrat(
-                          textStyle: TextStyle(fontSize: 15, color: Color(0xFF007AFF))),
-                      textScaleFactor: 1,
-                    )),
-              )
-          )
+                height: 100,
+            child: TextButton(
+                autofocus: false,
+                onPressed: () {
+                  _recognizeTexts();
+                },
+                child: Text(
+                  StringValues.lblScanImage,
+                  style: GoogleFonts.montserrat(
+                      textStyle:
+                          TextStyle(fontSize: 15, color: Color(0xFF007AFF))),
+                  textScaleFactor: 1,
+                )),
+          ))
         ],
       ),
     );

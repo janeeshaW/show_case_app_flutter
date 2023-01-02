@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_showcase_app/ui/camera_scanner/camera_scanner.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
 import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart';
@@ -90,6 +91,12 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const ThreeDModelingHome()),
         );
         break;
+      case StringValues.lblCameraScanner:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CameraScanner()),
+        );
+        break;
 
 
 
@@ -110,7 +117,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblVoiceIntegration, '07'),
       Services(StringValues.lblOnBoarding, '08'),
       Services(StringValues.lbl3dModeling, '09'),
-      Services('BIOMETRICS', '05'),
+      Services(StringValues.lblCameraScanner, '10'),
 
     ];
 

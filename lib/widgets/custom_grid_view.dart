@@ -113,6 +113,9 @@ class CustomGridView extends StatelessWidget {
       case StringValues.lbl3dModeling:
         url = ImagesRepo.windScreen;
         break;
+      case StringValues.lblCameraScanner:
+        url = ImagesRepo.windScreen;
+        break;
       // case StringValues.lbl_tile_infringements:
       //   url = ImagesRepo.infringements;
       //   break;
