@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class MenuItem {
+class CustomMenuItem {
  final String name;
  final IconData icon;
 
- const MenuItem (this.name, this.icon);
+ const CustomMenuItem (this.name, this.icon);
 }
 
 

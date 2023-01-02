@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
-import 'package:flutter_showcase_app/ui/login/login_screen.dart';
+import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart';
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
+import '3d_modeling/threed_modeling_home.dart';
 import 'animated_drawer/drawer.dart';
+import 'bottom_navigator/select_bottom_navigator.dart';
+import 'onbording/on_bording_home.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -63,12 +66,36 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const DrawerMain()),
         );
         break;
-      case StringValues.lblAnimations:
+      case StringValues.lblBottomNavigation:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
+          MaterialPageRoute(builder: (context) => const BottomNavigatorSelector()),
         );
         break;
+      case StringValues.lblVoiceIntegration:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const SpeechToTextHome()),
+        );
+        break;
+      case StringValues.lblOnBoarding:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const OnBoardingHome()),
+        );
+        break;
+      case StringValues.lbl3dModeling:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const ThreeDModelingHome()),
+        );
+        break;
+
+
+
+
+
+
     }
 
   }
@@ -77,12 +104,12 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblTileImageSlider, '01'),
       Services(StringValues.lblTileCustomPainter, '02'),
       Services(StringValues.lblTileDrawer, '03'),
-      Services(StringValues.lblAnimations, '04'),
-      Services('BIOMETRICS', '05'),
-      Services('IMAGE SLIDER', '01'),
-      Services('CUSTOM PAINTER', '02'),
-      Services('IMAGE PICKER', '03'),
       Services('ANIMATION', '04'),
+      Services('BIOMETRICS', '05'),
+      Services(StringValues.lblBottomNavigation, '06'),
+      Services(StringValues.lblVoiceIntegration, '07'),
+      Services(StringValues.lblOnBoarding, '08'),
+      Services(StringValues.lbl3dModeling, '09'),
       Services('BIOMETRICS', '05'),
 
     ];

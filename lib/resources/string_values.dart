@@ -9,4 +9,12 @@ class StringValues {
   static const lblTileBiometric = "BIOMETRICS";
   static const lblTileDrawer = "ANIMATED DRAWER";
   static const lblAnimations = "ANIMATIONS";
+  static const titleHistoryPage = "History Page";
+  static const lblBottomNavigation = "BOTTOM NAVIGATION";
+  static const lblAnimatedBottomNavigation = "ANIMATED BOTTOM NAVIGATION";
+  static const lblScrollBottomNavigation = "SCROLL BOTTOM NAVIGATION";
+  static const lblFancyBottomNavigation = "FANCY BOTTOM NAVIGATION";
+  static const lblVoiceIntegration = "VOICE INTEGRATION";
+  static const lblOnBoarding = "ON BOARDING";
+  static const lbl3dModeling = "3D MODELING";
 }
