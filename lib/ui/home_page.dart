@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_showcase_app/ui/camera_scanner/camera_scanner.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
 import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart';
 import '../models/grid_services.dart';
 import '../resources/string_values.dart';
 import '../widgets/custom_grid_view.dart';
+import '3d_modeling/threed_modeling_home.dart';
 import 'animated_drawer/drawer.dart';
 import 'bottom_navigator/select_bottom_navigator.dart';
 import 'onbording/on_bording_home.dart';
@@ -18,15 +18,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   List<Services> gridServices = [];
+
 
   @override
   void initState() {
     gridServices = fetchServices();
-    setState(() {});
+    setState(() {
+    });
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,14 +46,12 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
   Future<void> performAction(String action) async {
     switch (action) {
       case StringValues.lblTileCustomPainter:
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => const FlutterPainterExample()),
+          MaterialPageRoute(builder: (context) => const FlutterPainterExample()),
         );
         break;
       case StringValues.lblTileImageSlider:
@@ -69,8 +69,7 @@ class _HomePageState extends State<HomePage> {
       case StringValues.lblBottomNavigation:
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => const BottomNavigatorSelector()),
+          MaterialPageRoute(builder: (context) => const BottomNavigatorSelector()),
         );
         break;
       case StringValues.lblVoiceIntegration:
@@ -85,16 +84,22 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const OnBoardingHome()),
         );
         break;
-      case StringValues.lblCameraScanner:
+      case StringValues.lbl3dModeling:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const CameraScanner()),
+          MaterialPageRoute(builder: (context) => const ThreeDModelingHome()),
         );
         break;
-    }
-  }
 
-  List<Services> fetchServices() {
+
+
+
+
+
+    }
+
+  }
+  List<Services> fetchServices(){
     return <Services>[
       Services(StringValues.lblTileImageSlider, '01'),
       Services(StringValues.lblTileCustomPainter, '02'),
@@ -104,9 +109,10 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblBottomNavigation, '06'),
       Services(StringValues.lblVoiceIntegration, '07'),
       Services(StringValues.lblOnBoarding, '08'),
-      Services('ANIMATION', '04'),
+      Services(StringValues.lbl3dModeling, '09'),
       Services('BIOMETRICS', '05'),
-      Services('CAMERA SCANNER', '10'),
+
     ];
+
   }
 }
