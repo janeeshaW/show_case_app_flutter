@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_showcase_app/ui/camera_scanner/camera_scanner.dart';
 import 'package:flutter_showcase_app/ui/custom_painter.dart';
 import 'package:flutter_showcase_app/ui/image_slider.dart';
 import 'package:flutter_showcase_app/ui/speech_to_text/speech_to_text_home.dart';
@@ -17,17 +18,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   List<Services> gridServices = [];
-
 
   @override
   void initState() {
     gridServices = fetchServices();
-    setState(() {
-    });
+    setState(() {});
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,12 +44,14 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
   Future<void> performAction(String action) async {
     switch (action) {
       case StringValues.lblTileCustomPainter:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const FlutterPainterExample()),
+          MaterialPageRoute(
+              builder: (context) => const FlutterPainterExample()),
         );
         break;
       case StringValues.lblTileImageSlider:
@@ -68,7 +69,8 @@ class _HomePageState extends State<HomePage> {
       case StringValues.lblBottomNavigation:
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const BottomNavigatorSelector()),
+          MaterialPageRoute(
+              builder: (context) => const BottomNavigatorSelector()),
         );
         break;
       case StringValues.lblVoiceIntegration:
@@ -83,15 +85,16 @@ class _HomePageState extends State<HomePage> {
           MaterialPageRoute(builder: (context) => const OnBoardingHome()),
         );
         break;
-
-
-
-
-
+      case StringValues.lblCameraScanner:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const CameraScanner()),
+        );
+        break;
     }
-
   }
-  List<Services> fetchServices(){
+
+  List<Services> fetchServices() {
     return <Services>[
       Services(StringValues.lblTileImageSlider, '01'),
       Services(StringValues.lblTileCustomPainter, '02'),
@@ -103,8 +106,7 @@ class _HomePageState extends State<HomePage> {
       Services(StringValues.lblOnBoarding, '08'),
       Services('ANIMATION', '04'),
       Services('BIOMETRICS', '05'),
-
+      Services('CAMERA SCANNER', '10'),
     ];
-
   }
 }

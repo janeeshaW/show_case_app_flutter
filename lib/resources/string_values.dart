@@ -15,4 +15,8 @@ class StringValues {
   static const lblFancyBottomNavigation = "FANCY BOTTOM NAVIGATION";
   static const lblVoiceIntegration = "VOICE INTEGRATION";
   static const lblOnBoarding = "ON BOARDING";
+  static const lblCameraScanner = "CAMERA SCANNER";
+
+
+  static const lblScanImage = "SELECT NEW IMAGE TO SCAN";
 }
